@@ -1,9 +1,8 @@
-package com.devteria.identity.configuration;
+package com.devteria.profile.configuration;
 
 import java.text.ParseException;
 import java.time.Instant;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.security.oauth2.jwt.JwtDecoder;
 import org.springframework.security.oauth2.jwt.JwtException;
@@ -13,9 +12,6 @@ import com.nimbusds.jwt.SignedJWT;
 
 @Component
 public class CustomJwtDecoder implements JwtDecoder {
-    @Value("${jwt.signerKey}")
-    private String signerKey;
-
     @Override
     public Jwt decode(String token) throws JwtException {
         try {
